@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct MsgRow : View {
-    var msg = ""
     var isMyMsg = false
+    var msg = ""
     var email = ""
     
     var body : some View {

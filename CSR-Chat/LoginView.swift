@@ -36,16 +36,12 @@ struct LoginView: View {
 
                     }
                     .padding(12)
-                    .background(Color.white)
-                    .cornerRadius(20)
                     
                     HStack {
                         Image(systemName: "lock.fill").resizable().frame(width: 15, height: 20).padding(.leading, 3)
                         SecureField("Password", text: $password).padding(.leading, 12).font(.system(size: 20))
                     }
                     .padding(12)
-                    .background(Color.white)
-                    .cornerRadius(20)
                     
                     Button(action: logIn) {
                         Text("Login")

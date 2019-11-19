@@ -15,7 +15,6 @@ struct SignUp: View {
     @State var passwordConfirm: String = ""
 
     @State var showingAlert = false
-    @State var successAlert = false
     @State var errorMsg = ""
     
     let personWidth = CGFloat(60.0)

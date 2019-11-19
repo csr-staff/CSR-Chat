@@ -9,5 +9,4 @@ target 'CSR-Chat' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
 
-
 end

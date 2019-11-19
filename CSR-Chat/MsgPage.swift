@@ -11,8 +11,8 @@ import SwiftUI
 struct MsgPage : View {
     
     var session: FirebaseSession
-    
     @ObservedObject var msg = FirebaseSession()
+    
     @State var typedMsg = ""
     
     var body : some View {
@@ -20,16 +20,16 @@ struct MsgPage : View {
         VStack {
             List(session.msgs) { i in
                 if i.email == self.session.session.email {
-                    MsgRow(msg: i.msg, isMyMsg: true, email: i.email)
+                    MsgRow(isMyMsg: true, msg: i.msg, email: i.email)
                 } else {
-                    MsgRow(msg: i.msg, isMyMsg: false, email: i.email)
+                    MsgRow(isMyMsg: false, msg: i.msg, email: i.email)
                 }
             }
-            .navigationBarTitle("Chats", displayMode: .inline)
+//            .navigationBarTitle("Chats", displayMode: .inline)
             
             HStack {
                 TextField("Enter message here", text: $typedMsg).textFieldStyle(RoundedBorderTextFieldStyle())
-                
+    
                 Button(action: {
                     self.msg.addMsg(msg: self.typedMsg, email: self.session.session.email!)
                     self.typedMsg = ""
